@@ -1,15 +1,20 @@
 def move(my_list, direction):
+    result = my_list.copy()
+    try:
+        idx = result.index(1)
+    except ValueError:
+        return result
 
-    # Finds the index of the one in the list
-    index_of_one = my_list.index(1)
+    if direction == 'left':
+        new_idx = idx - 1
+    elif direction == 'right':
+        new_idx = idx + 1
+    else:
+        return result
 
-    # Move the one to the left or to the right
-    if direction == 'right':
-        my_list[index_of_one] = 0
-        my_list[index_of_one + 1] = 1
-
-    elif direction == 'left':
-        my_list[index_of_one] = 0
-        my_list[index_of_one - 1] = 1
-
-    return my_list
+    if 0 <= new_idx < len(result):
+        result[idx] = 0
+        result[new_idx] = 1
+        return result
+    else:
+        return result
