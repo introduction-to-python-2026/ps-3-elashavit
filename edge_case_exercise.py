@@ -19,3 +19,4 @@ def approximate_pi(n):
     for k in range(n):
         total += ((-1) ** k) / (2 * k + 1)
     return 4 * total
+
