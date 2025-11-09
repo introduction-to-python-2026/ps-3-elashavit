@@ -12,3 +12,10 @@ def move(my_list, direction):
         my_list[idx], my_list[new_idx] = 0, 1
 
     return my_list
+
+
+def approximate_pi(n):
+    total = 0
+    for k in range(n):
+        total += ((-1) ** k) / (2 * k + 1)
+    return 4 * total
