@@ -1,22 +1,14 @@
 def move(my_list, direction):
-    idx = my_list.index(1)
-
-    if direction == 'left':
-        new_idx = idx - 1
-    elif direction == 'right':
-        new_idx = idx + 1
-    else:
-        return my_list
-
-    if 0 <= new_idx < len(my_list):
-        my_list[idx], my_list[new_idx] = 0, 1
-
+    index_of_one = my_list.index(1)
+    list_length = len(my_list)
+    if direction == 'right':
+        if index_of_one < list_length - 1:
+            my_list[index_of_one] = 0
+            my_list[index_of_one + 1] = 1
+    elif direction == 'left':
+       if index_of_one > 0:
+           my_list[index_of_one] = 0
+           my_list[index_of_one - 1] = 1
     return my_list
-
-
-def approximate_pi(n):
-    total = 0
-    for k in range(n):
-        total += ((-1) ** k) / (2 * k + 1)
-    return 4 * total
-
+            
+               
